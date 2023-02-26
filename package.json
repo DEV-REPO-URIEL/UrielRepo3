@@ -1,0 +1,77 @@
+{
+  "name": "whitesource-renovate",
+  "private": true,
+  "version": "1.0.0",
+  "description": "WhiteSource Renovate",
+  "author": "Rhys Arkins <rhys@arkins.net>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "bundle": "node bin/bundle",
+    "jest": "jest --env=node --passWithNoTests",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint-fix": "eslint --fix --ignore-path .gitignore .",
+    "prettier": "prettier --list-different \"**/*.{ts,js,mjs,json,md}\"",
+    "prettier-fix": "prettier --write \"**/*.{ts,js,mjs,json,md}\"",
+    "test": "yarn prettier && yarn lint && yarn jest",
+    "webpack": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "@azure/identity": "1.0.0-preview.2",
+    "@azure/keyvault-secrets": "4.3.0",
+    "@sindresorhus/is": "4.6.0",
+    "body-parser": "1.20.1",
+    "buffer-equal-constant-time": "1.0.1",
+    "bunyan": "1.8.15",
+    "child-process-promise": "2.2.1",
+    "cron": "1.8.2",
+    "delay": "5.0.0",
+    "email-addresses": "3.1.0",
+    "express": "4.18.2",
+    "fs-extra": "9.1.0",
+    "github-webhook-handler": "1.0.0",
+    "got": "11.8.5",
+    "jest": "27.5.1",
+    "jsonwebtoken": "9.0.0",
+    "jsrsasign": "10.5.25",
+    "minimatch": "3.1.2",
+    "p-all": "3.0.0",
+    "parse-link-header": "2.0.0",
+    "proper-url-join": "2.1.1",
+    "renovate": "34.100.1",
+    "semver": "7.3.8",
+    "shortid": "2.2.16",
+    "tunnel": "0.0.6"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-prettier": "3.4.1",
+    "eslint-plugin-promise": "4.3.1",
+    "prettier": "2.7.1",
+    "upath": "2.0.1",
+    "webpack": "4.46.0",
+    "webpack-cli": "3.3.12",
+    "webpack-node-externals": "1.7.2"
+  },
+  "resolutions": {
+    "axios": "^0.21.2"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js"
+    ],
+    "coverageReporters": [
+      "json",
+      "html",
+      "text-summary"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
